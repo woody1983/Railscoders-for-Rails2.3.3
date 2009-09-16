@@ -14,6 +14,9 @@
   
 3 RedCloth的安装后的调用 是在/config/environment.rb中添加  config.gem "RedCloth"
 
+#------------- 待解决问题 -------------#
+4.5.2 为API添加HTTP验证
+
 
 
 user_roles GET    /users/:user_id/roles(.:format)                      {:controller=>"roles", :action=>"index"}

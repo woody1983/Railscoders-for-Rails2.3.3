@@ -49,7 +49,7 @@ module LoginSystem
 		username, password = nil, nil
 		auth_headers = [ 'X-HTTP_AUTHORIZATION','Authorization', 'HTTP_AUTHORIZATION',
 						'REDIRECT_REDIRECT_X_http_AUTHORIZATION']
-		auth_header = auth_header.detect { |key| request.env|key| }
+		auth_header = auth_header.detect { |key| request.env[key] }
 		auth_data = request.env[auth_header].to_s.split
 		
 		if auth_data && auth_data[0] = 'Basic'

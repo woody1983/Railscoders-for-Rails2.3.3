@@ -1,3 +1,21 @@
+#------------- first -------------#
+
+这是来自《Practical Rails Social Networking Sites》 - 《Ruby on Rails社区网站开发》
+书中的源码 作者用的是版本是2.0左右的 现在Rails已经升级到2.3.3版本了
+
+有些内容的改动还是蛮大的 比如
+
+1 书中所讲的分页paginate已经被will_paginate所取代
+  在controller中的调用要加类名 比如 Article.paginate
+
+2 嵌套路由在views中的写法 
+  <td>[<%= link_to 'edit permissions', user_roles_url(user) %>]</td>
+  书中用的是 roles_url
+  
+3 RedCloth的安装后的调用 是在/config/environment.rb中添加  config.gem "RedCloth"
+
+
+
 user_roles GET    /users/:user_id/roles(.:format)                      {:controller=>"roles", :action=>"index"}
 POST   /users/:user_id/roles(.:format)                      {:controller=>"roles", :action=>"create"}
 new_user_role GET    /users/:user_id/roles/new(.:format)                  {:controller=>"roles", :action=>"new"}

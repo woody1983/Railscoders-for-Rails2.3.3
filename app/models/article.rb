@@ -10,7 +10,7 @@ class Article < ActiveRecord::Base
 	
 	
 	cattr_reader :per_page 
-    @@per_page = 5 
+    @@per_page = 3 
 	
 	before_save :update_published_at
 	

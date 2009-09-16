@@ -1,0 +1,8 @@
+user_roles GET    /users/:user_id/roles(.:format)                      {:controller=>"roles", :action=>"index"}
+POST   /users/:user_id/roles(.:format)                      {:controller=>"roles", :action=>"create"}
+new_user_role GET    /users/:user_id/roles/new(.:format)                  {:controller=>"roles", :action=>"new"}
+edit_user_role GET    /users/:user_id/roles/:id/edit(.:format)             {:controller=>"roles", :action=>"edit"}
+user_role GET    /users/:user_id/roles/:id(.:format)                  {:controller=>"roles", :action=>"show"}
+PUT    /users/:user_id/roles/:id(.:format)                  {:controller=>"roles", :action=>"update"}
+DELETE /users/:user_id/roles/:id(.:format)                  {:controller=>"roles", :action=>"destroy"}
+

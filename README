@@ -83,7 +83,7 @@
     $ git checkout master
     $ git merge email_activation
     $ git branch -d email_activation
-    $ git tag v2
+    $ git tag v2 
 
 
 user_roles GET    /users/:user_id/roles(.:format)                      {:controller=>"roles", :action=>"index"}

@@ -89,8 +89,8 @@ BBS功能
     $ git add .
     $ git commit -m "People can activation their accounts by the confirm emails."
     $ git checkout master
-    $ git merge email_activation
-    $ git branch -d email_activation
+    $ git merge bbs
+    $ git push
     $ git tag v2  
 
 

@@ -1,0 +1,43 @@
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git branch
+* bbs
+  master
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git checkout matser
+error: pathspec 'matser' did not match any file(s) known to git.
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git checkout master
+Switched to branch "master"
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git tag v1
+fatal: tag 'v1' already exists
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git checkout bbs
+Switched to branch "bbs"
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git tag v1
+fatal: tag 'v1' already exists
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git push origin bbs
+Counting objects: 11, done.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (9/9), 2.35 KiB, done.
+Total 9 (delta 5), reused 0 (delta 0)
+To git@github.com:woody1983/Railscoders-for-Rails2.3.3.git
+ * [new branch]      bbs -> bbs
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git add .
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git commit -m 'BBS功能需求的分析和确定'
+Created commit fad077f: BBS功能需求的分析和确定
+ 1 files changed, 6 insertions(+), 0 deletions(-)
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git checkout master
+Switched to branch "master"
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git merge bbs
+Updating 7d7fb69..fad077f
+Fast forward
+ README |   73 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 files changed, 73 insertions(+), 0 deletions(-)
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git tag2
+git: 'tag2' is not a git-command. See 'git --help'.
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git tag v2
+woody@Woody:~/rails/Railscoders-for-Rails2.3.3$ git push
+Counting objects: 5, done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 538 bytes, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:woody1983/Railscoders-for-Rails2.3.3.git
+   a6ad6dd..fad077f  bbs -> bbs
+   7d7fb69..fad077f  master -> master
+

@@ -24,6 +24,8 @@ BBS功能
 计数器缓存  比如显示指定讨论区下主题的总数 会在topics-per-forum posts-per-topic计数器中使用计数器缓存
 在数据表中对应的字段是 topics_count posts_count
 
+资源嵌套 主题资源tpoic嵌套在论坛资源forum下  帖子资源post嵌套在主题资源topic下
+
 
 #--------------git---------------#
     ### 新建工作分支 ###

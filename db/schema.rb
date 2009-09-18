@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090915021645) do
+ActiveRecord::Schema.define(:version => 20090918083740) do
 
   create_table "articles", :force => true do |t|
     t.integer  "user_id"
@@ -29,6 +29,14 @@ ActiveRecord::Schema.define(:version => 20090915021645) do
     t.datetime "updated_at"
   end
 
+  create_table "forums", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "topics_count", :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.string   "permalink"
@@ -36,6 +44,16 @@ ActiveRecord::Schema.define(:version => 20090915021645) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "posts", :force => true do |t|
+    t.integer  "topic_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["topic_id"], :name => "index_posts_on_topic_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -48,6 +66,17 @@ ActiveRecord::Schema.define(:version => 20090915021645) do
     t.integer "user_id", :null => false
   end
 
+  create_table "topics", :force => true do |t|
+    t.integer  "forum_id"
+    t.integer  "user_id"
+    t.string   "name"
+    t.integer  "posts_count", :default => 0, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "topics", ["forum_id"], :name => "index_topics_on_forum_id"
+
   create_table "users", :force => true do |t|
     t.string   "username",        :limit => 64,                    :null => false
     t.string   "email",           :limit => 128,                   :null => false
@@ -57,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20090915021645) do
     t.datetime "last_login_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "posts_count",                    :default => 0,    :null => false
   end
 
   add_index "users", ["username"], :name => "index_users_on_username"

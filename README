@@ -19,6 +19,73 @@
 
 
 
+#--------------git---------------#
+    ### 新建工作分支 ###
+
+    $ git checkout -b email_activation
+
+       或者
+
+    $ git branch email_activation
+    $ git checkout email_activation
+
+    查看当前工作所在的分支，
+
+    $ git branch
+    
+    
+   ### 提交工作成果到GIT仓库 ###
+
+    $ cd ~/code/user_demo
+    $ git init
+    $ git add .
+    $ git commit -m "A user can be able to sign up."
+    $ git tag v1
+   
+   如果你当前的工作目录（working tree）已经混乱不堪，但是还没有提交，可以使用：
+
+    $ git reset --hard
+
+    这会丢弃所有的改变，包括去除已经加到git index里边的内容；然后将 working tree 和 index 恢复到上次commit时的状态。
+
+    如果想回滚到一个指定的版本，就需要指定版本号：
+
+    $ git reset --hard v1
+  
+  还有，记得 --hard 选项要慎重使用，具体的您可以使用 “git reset -h” 命令查阅更多关于撤销修改的详细信息。
+
+    如果只是想放弃对某一文件的修改，可以使用 checkout 命令。这个命令不单用于分支间的切换，还可以回滚一个指定的文件内容到上次所做的修改，例如：
+
+    $ git checkout app/models/user.rb
+
+      这会放弃对user.rb所做的修改，并将user.rb的内容从上一个已提交的版本中更新回来。当然还可以指定回滚到指定版本，例如：
+
+    $ git checkout v1 app/models/user.rb
+    
+    /* 正常使用 */
+    woody@Woody:~/git_code/ruby$ git checkout email
+
+	Switched to branch "email"
+
+	woody@Woody:~/git_code/ruby$ git branch
+
+	* email
+
+	master
+	
+	分支上的开发工作已经顺利完成，可以将工作成果归并到主干中去了。
+
+
+    ### 提交工作成果到GIT仓库 ###
+
+    $ git add .
+    $ git commit -m "People can activation their accounts by the confirm emails."
+    $ git checkout master
+    $ git merge email_activation
+    $ git branch -d email_activation
+    $ git tag v2
+
+
 user_roles GET    /users/:user_id/roles(.:format)                      {:controller=>"roles", :action=>"index"}
 POST   /users/:user_id/roles(.:format)                      {:controller=>"roles", :action=>"create"}
 new_user_role GET    /users/:user_id/roles/new(.:format)                  {:controller=>"roles", :action=>"new"}

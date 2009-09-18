@@ -1,2 +1,6 @@
-<h1>Categories#new</h1>
-<p>Find me in app/views/categories/new.html.erb</p>
+<h2>Crate a New Category</h2>
+	<%= error_messages_for :category %>
+	<% form_for(:category, :url => categories_path) do |f| -%>
+		<p>Name:<br /><%= f.text_field :name, :size => 60 %></p>
+		<%= submit_tag 'Save' %> or <%= link_to 'cancel', admin_categories_url %>
+	<% end %>

@@ -38,22 +38,23 @@ class CategoriesController < ApplicationController
   	respond_to do |wants|
   		wants.html { redirect_to admin_categories_url }
   		wants.xml  { render :xml => @category.to_xml }
+  	end
   end
 
   def destroy
   	@category = Category.find(params[:id])
-  	@category.find(params[:id]).destroy
-  	respond_to |wants|
+  	@category.destroy
+  	respond_to do |wants|
   		wants.html { redirect_to admin_categories_url }
-  		wants.xml  { render :xml => @category.to_xml }
+  		wants.xml  { render :nothing => true }
   	end
   end
-
+  
   def admin
   	@categories = Category.find(:all)
   	respond_to do |wants|
-  		wants.html { redirect_to admin_categories_url }
-  		wants.xml  { render :xml => @category.to_xml }
+  		wants.html 
+  		wants.xml  { render :xml => @categories.to_xml }
   	end
   end
 

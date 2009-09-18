@@ -44,6 +44,7 @@ ActionController::Routing::Routes.draw do |map|
 	        		 :action => 'show',
 				 :id => '1-railscoders_home'
   map.resources :pages
+ 
   
   map.resources :users, :member => { :enable => :put } do |user|
   	user.resources :roles
